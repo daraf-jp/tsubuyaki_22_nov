@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
   resource :registrations, only: [:new, :create]
 
   root to: 'registrations#new'
