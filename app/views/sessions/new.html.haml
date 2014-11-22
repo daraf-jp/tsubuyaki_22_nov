@@ -1,2 +1,9 @@
 %h1 Sessions#new
 %p Find me in app/views/sessions/new.html.haml
+
+= form_for @user, url: sessions_path, method: :post do |f|
+  = f.label :email
+  = f.text_field :email
+  = f.label :password
+  = f.password_field :password
+  = f.submit
