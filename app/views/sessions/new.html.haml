@@ -1,6 +1,10 @@
 %h1 Sessions#new
 %p Find me in app/views/sessions/new.html.haml
 
+- if action_name == "create"
+  .alert.alert-danger
+    メールアドレスまたはパスワードが正しくありません。
+
 = form_for @user, url: sessions_path, method: :post do |f|
   = f.label :email
   = f.text_field :email
