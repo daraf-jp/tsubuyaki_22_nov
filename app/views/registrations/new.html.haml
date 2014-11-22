@@ -24,4 +24,5 @@
         = f.label :password_confirmation, "確認用パスワード: 6文字以上", class: "control-label"
         = f.password_field :password_confirmation, class: "form-control"
       = f.submit "登録する", class: "btn btn-primary"
+      = link_to "ログインする", new_sessions_path, class: "login pull-right"
       .clear
