@@ -1,5 +1,7 @@
 #settings-edit
   .col-xs-6.settings-content
+    - @user.errors.each do |attr, message|
+      .alert.alert-danger= message
     = form_for @user, url: settings_path, method: :put do |f|
       %h2
         設定
