@@ -1,1 +1,12 @@
-_tweet.html.haml
+= div_for @user.tweets, class: "list-group-item" do |t|
+  %h4.user
+    %span.user-name
+      = link_to t.user.name, user_path(t.user)
+    %span.user-id
+      @#{t.user.name}
+    %span.time.pull-right
+      = distance_of_time_in_words_to_now(t.created_at)
+    .clear
+  .tweet-content
+    %p
+      = t.content
