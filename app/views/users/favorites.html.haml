@@ -1,7 +1,7 @@
 .col-xs-8#users-content
   = render partial: "users/header"
   .list-group
-    - if @user.tweets.empty?
+    - if @user.favorites.empty?
       .list-group-item
         まだお気に入りに登録されたツイートはありません
     = render partial: "users/tweet", collection: @user.favorites.map{|f| f.tweet }
