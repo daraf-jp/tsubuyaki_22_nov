@@ -4,3 +4,5 @@
     - if @user.tweets.empty?
       .list-group-item
         まだツイートはありません
+    - @user.tweets.each do |tweet|
+      = render partial: "users/tweet", object: tweet
