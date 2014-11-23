@@ -27,6 +27,10 @@
                       フォロワー
                     .num
                       0
+              = form_for @tweet do |f|
+                .form-group
+                  = f.text_area :content, class: "form-control"
+                = f.submit "つぶやく", class: "btn btn-success"
       .col-xs-8.right-content
         .list-group
           = div_for @tweets, class: "list-group-item" do |t|
