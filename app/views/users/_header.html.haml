@@ -16,7 +16,7 @@
       .num
         #{@user.tweets.count}
   %li
-    = link_to nil do
+    = link_to follows_user_path(@user) do
       .text
         フォロー
       .num
