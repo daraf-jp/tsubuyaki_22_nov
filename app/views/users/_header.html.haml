@@ -9,7 +9,7 @@
     = @user.bio
 
 %ul.nav.nav-tabs.nav-justified
-  %li.active
+  %li{ class: action_name == "show" ? "active" : nil }
     = link_to user_path(@user) do
       .text
         つぶやき
@@ -27,7 +27,7 @@
         フォロワー
       .num
         0
-  %li
+  %li{ class: action_name == "favorites" ? "active" : nil }
     = link_to favorites_user_path(@user) do
       .text
         お気に入り
