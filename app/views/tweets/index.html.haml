@@ -27,6 +27,8 @@
                       フォロワー
                     .num
                       0
+              - @tweet.errors.full_messages.each do |message|
+                .alert.alert-danger= message
               = form_for @tweet do |f|
                 .form-group
                   = f.text_area :content, class: "form-control"
