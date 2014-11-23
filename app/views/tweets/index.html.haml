@@ -1,0 +1,43 @@
+#tweets-content
+  .container
+    .row
+      .col-xs-4.left-content
+        - if logged_in?
+          .panel.panel-default
+            .panel-body
+              = link_to user_path(current_user), class: "user" do
+                %span.user-name
+                  = render_user_screen_name current_user
+                %span.user-id
+                  @#{current_user.name}
+              .user-activity
+                .row
+                  .col-xs-4.tweets-num
+                    .text
+                      つぶやき
+                    .num
+                      = link_to current_user.tweets.count, user_path(current_user)
+                  .col-xs-4.follow-num
+                    .text
+                      フォロー
+                    .num
+                      0
+                  .col-xs-4.follower-num
+                    .text
+                      フォロワー
+                    .num
+                      0
+      .col-xs-8.right-content
+        .list-group
+          = div_for @tweets, class: "list-group-item" do |t|
+            %h4.user
+              %span.user-name
+                = link_to render_user_screen_name(t.user), user_path(t.user)
+              %span.user-id
+                @#{t.user.name}
+              %span.time.pull-right
+                = distance_of_time_in_words_to_now(t.created_at)
+              .clear
+            .tweet-content
+              %p
+                = t.content
