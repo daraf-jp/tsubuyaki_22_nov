@@ -4,6 +4,7 @@
       = link_to '#Tsubuyaki', root_url, class: "navbar-brand"
     - if logged_in?
       %ul.nav.navbar-nav
+        %li= link_to "全ツイート一覧", tweets_path
         %li= link_to "ユーザー一覧", users_path
       %ul.nav.navbar-nav.navbar-right
         %li= link_to current_user.name, current_user
