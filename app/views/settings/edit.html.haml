@@ -1,2 +1,11 @@
 %h1 Settings#edit
 %p Find me in app/views/settings/edit.html.haml
+
+= form_for @user, url: settings_path, method: :put do |f|
+  = f.label :name
+  = f.text_field :name
+  = f.label :screen_name
+  = f.text_field :screen_name
+  = f.label :bio
+  = f.text_area :bio
+  = f.submit
