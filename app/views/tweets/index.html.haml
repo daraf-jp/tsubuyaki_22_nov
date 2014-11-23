@@ -34,6 +34,8 @@
                   = f.text_area :content, class: "form-control"
                 = f.submit "つぶやく", class: "btn btn-success"
       .col-xs-8.right-content
+        - if notice
+          .alert.alert-info= notice
         .list-group
           = div_for @tweets, class: "list-group-item" do |t|
             %h4.user
