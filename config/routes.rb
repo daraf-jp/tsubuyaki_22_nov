@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resource :settings, only: [:edit, :update]
 
   resources :users, only: [:index, :show] do
+    resource :follows, only: [:create, :destroy]
     get :favorites, on: :member
   end
 
