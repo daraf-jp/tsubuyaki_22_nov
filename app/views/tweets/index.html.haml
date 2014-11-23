@@ -49,3 +49,5 @@
             .tweet-content
               %p
                 = t.content
+              .content-footer
+                = link_to "お気に入りに登録", tweet_favorites_path(t), method: :post
