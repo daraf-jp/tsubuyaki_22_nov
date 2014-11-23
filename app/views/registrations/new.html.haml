@@ -5,6 +5,9 @@
       このサイトは、シラバスのRails学習コースの完成形サンプルアプリです。Microsoft Azure上で運用されています。
     %p.by
       開発者: @ohataken デザイン: @keito0904 企画: @saiwaki14
+    - if notice
+      %p
+        .alert.alert-info= notice
   .col-xs-6.right-content
     = form_for @user, url: registrations_path, method: :post do |f|
       %h2
