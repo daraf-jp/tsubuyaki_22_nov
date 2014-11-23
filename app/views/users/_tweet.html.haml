@@ -1,4 +1,4 @@
-= div_for @user.tweets, class: "list-group-item" do |t|
+= div_for tweet, class: "list-group-item" do |t|
   %h4.user
     %span.user-name
       = link_to t.user.name, user_path(t.user)
