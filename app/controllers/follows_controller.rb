@@ -10,4 +10,11 @@ class FollowsController < ApplicationController
       redirect_to tweets_url, alert: "フォローできません"
     end
   end
+
+  def destroy
+    @user = User.find(params[:user_id])
+    follow = @user.inverse_follows.find_by(follower: current_user.id)
+    follow.destroy
+    redirect_to tweets_url, notice: "フォローを解除しました"
+  end
 end
