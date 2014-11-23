@@ -1,1 +1,35 @@
-_header.html.haml
+.user-info
+  - if notice
+    .alert.alert-info= notice
+  %span.user-name
+    = render_user_screen_name(@user)
+  %span.user-id
+    @#{@user.name}
+  .bio
+    = @user.bio
+
+%ul.nav.nav-tabs.nav-justified
+  %li.active
+    = link_to user_path(@user) do
+      .text
+        つぶやき
+      .num
+        #{@user.tweets.count}
+  %li
+    = link_to nil do
+      .text
+        フォロー
+      .num
+        0
+  %li
+    = link_to nil do
+      .text
+        フォロワー
+      .num
+        0
+  %li
+    = link_to nil do
+      .text
+        お気に入り
+      .num
+        0
