@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show] do
     resource :follows, only: [:create, :destroy]
     get :favorites, on: :member
+    get :follows, on: :member
   end
 
   resources :tweets do
