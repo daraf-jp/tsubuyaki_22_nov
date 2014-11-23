@@ -79,3 +79,51 @@ html, body
         .text
         .num
           font-size: 28px
+
+#tweets-content
+  .left-content
+    .panel
+      box-shadow: none
+      border-bottom-width: 3px
+      .user
+        .user-name
+          font-size: 20px
+          font-weight: 600
+          color: #555
+        .user-id
+          color: #aaa
+        &:hover
+          text-decoration: none
+          border-bottom: 1px solid #555
+      .user-activity
+        text-align: center
+        .row
+          border-bottom: 1px solid #ddd
+          padding: 10px 0px
+          .text
+            font-size: 12px
+            color: #777
+          .num
+            font-size: 18px
+  .right-content
+    .list-group-item:last-child
+      border-bottom-width: 3px
+    .list-group-item
+      .user
+        .user-name
+          a
+            color: #555
+        .user-id
+          font-size: 14px
+          color: #aaa
+          font-weight: 400
+        .time
+          font-size: 12px
+          color: #aaa
+          font-weight: 400
+      .tweet-content
+        font-size: 16px
+        .content-footer
+          a
+            font-size: 12px
+            margin-right: 10px
