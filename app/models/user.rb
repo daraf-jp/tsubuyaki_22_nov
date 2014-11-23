@@ -15,4 +15,8 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: { case_sensitive: false }
   validates :password, confirmation: true, length: { in: 6..24 }, if: :password
   validates :password_confirmation, presence: true, if: :password
+
+  def followed_by? user
+    inverse_follows.where(follower_id: user.id).exists?
+  end
 end
