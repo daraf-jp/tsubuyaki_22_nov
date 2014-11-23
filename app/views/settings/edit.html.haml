@@ -1,11 +1,16 @@
-%h1 Settings#edit
-%p Find me in app/views/settings/edit.html.haml
-
-= form_for @user, url: settings_path, method: :put do |f|
-  = f.label :name
-  = f.text_field :name
-  = f.label :screen_name
-  = f.text_field :screen_name
-  = f.label :bio
-  = f.text_area :bio
-  = f.submit
+#settings-edit
+  .col-xs-6.settings-content
+    = form_for @user, url: settings_path, method: :put do |f|
+      %h2
+        設定
+      .form-body
+        .form-group
+          = f.label :name, "ユーザーID: @cyllabus_jp", class: "control-label"
+          = f.text_field :name, class: "form-control"
+        .form-group
+          = f.label :screen_name, "表示名: シラバス", class: "control-label"
+          = f.text_field :screen_name, class: "form-control"
+        .form-group
+          = f.label :bio, "プロフィール(200文字)", class: "control-label"
+          = f.text_area :bio, class: "form-control"
+        = f.submit "送信する", class: "btn btn-success"
