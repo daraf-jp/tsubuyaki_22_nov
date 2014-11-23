@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   resource :sessions, only: [:new, :create, :destroy]
   resource :settings, only: [:edit, :update]
   resources :users, only: [:index, :show]
-  resources :tweets
+  resources :tweets do
+    resource :favorites, only: [:create, :destroy]
+  end
 
   root to: 'registrations#new'
 
