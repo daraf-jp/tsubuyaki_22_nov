@@ -1,4 +1,5 @@
 class TweetsController < ApplicationController
+  before_filter :require_login, except: [:index]
   before_action :set_tweet, only: [:show, :edit, :update, :destroy]
 
   # GET /tweets
