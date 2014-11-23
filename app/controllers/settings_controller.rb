@@ -5,8 +5,11 @@ class SettingsController < ApplicationController
 
   def update
     @user = current_user
-    @user.update_attributes(params_user)
-    redirect_to user_url(@user)
+    if @user.update_attributes(params_user)
+      redirect_to user_url(@user)
+    else
+      render :edit
+    end
   end
 
   private
