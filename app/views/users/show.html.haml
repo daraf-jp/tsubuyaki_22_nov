@@ -1,5 +1,7 @@
 .col-xs-8#users-content
   .user-info
+    - if notice
+      .alert.alert-info= notice
     %span.user-name
       = render_user_screen_name(@user)
     %span.user-id
