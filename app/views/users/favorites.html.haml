@@ -3,7 +3,7 @@
   .list-group
     - if @user.tweets.empty?
       .list-group-item
-        ありません
+        まだお気に入りに登録されたツイートはありません
     = div_for @user.tweets, class: "list-group-item" do |t|
       %h4.user
         %span.user-name
