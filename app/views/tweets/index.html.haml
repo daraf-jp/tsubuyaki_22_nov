@@ -7,15 +7,4 @@
         - if notice
           .alert.alert-info= notice
         .list-group
-          = div_for @tweets, class: "list-group-item" do |t|
-            %h4.user
-              %span.user-name
-                = link_to render_user_screen_name(t.user), user_path(t.user)
-              %span.user-id
-                @#{t.user.name}
-              %span.time.pull-right
-                = distance_of_time_in_words_to_now(t.created_at)
-              .clear
-            .tweet-content
-              %p
-                = t.content
+          = render partial: "users/tweet", collection: @tweets
