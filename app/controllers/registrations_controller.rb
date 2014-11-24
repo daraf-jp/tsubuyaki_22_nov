@@ -8,7 +8,7 @@ class RegistrationsController < ApplicationController
 
     if @user.save
       login(params_user[:email], params_user[:password])
-      redirect_to root_url
+      redirect_to tweets_url
     else
       render :new
     end

@@ -9,6 +9,6 @@
         .list-group
           .list-group-item
             .btn-group
-              = link_to "すべてのつぶやき", tweets_path, class: "active btn btn-primary"
-              = link_to "フォローしている人のつぶやき", timeline_tweets_path, class: "btn btn-default"
+              = link_to "すべてのつぶやき", tweets_path, class: "btn btn-default"
+              = link_to "フォローしている人のつぶやき", timeline_tweets_path, class: "active btn btn-primary"
           = render partial: "users/tweet", collection: @tweets
