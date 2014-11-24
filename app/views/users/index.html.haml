@@ -2,11 +2,4 @@
   .list-group
     .list-group-item.user-list
       %h2 ユーザー一覧
-    = div_for @users, class: "list-group-item" do |u|
-      %h4.user
-        %span.user-name
-          = link_to render_user_screen_name(u), user_path(u)
-        %span.user-id
-          @#{u.name}
-      .bio
-        = u.bio
+    = render partial: "users/user", collection: @users
