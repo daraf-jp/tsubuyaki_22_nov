@@ -7,4 +7,8 @@
         - if notice
           .alert.alert-info= notice
         .list-group
+          .list-group-item
+            .btn-group
+              = link_to "すべてのつぶやき", tweets_path, class: "active btn btn-primary"
+              = link_to "フォローしている人のつぶやき", timeline_tweets_path, class: "btn btn-default"
           = render partial: "users/tweet", collection: @tweets
