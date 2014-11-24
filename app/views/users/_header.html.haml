@@ -15,13 +15,13 @@
         つぶやき
       .num
         #{@user.tweets.count}
-  %li
+  %li{ class: action_name == "follows" ? "active" : nil }
     = link_to follows_user_path(@user) do
       .text
         フォロー
       .num
         0
-  %li
+  %li{ class: action_name == "followers" ? "active" : nil }
     = link_to followers_user_path(@user) do
       .text
         フォロワー
