@@ -2,6 +2,7 @@
   .container
     .row
       .col-xs-4.left-content
+        = render partial: "panel"
       .col-xs-8.right-content
         - if notice
           .alert.alert-info= notice
