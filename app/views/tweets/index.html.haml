@@ -21,12 +21,12 @@
                     .text
                       フォロー
                     .num
-                      0
+                      = link_to current_user.inverse_followers.count, follows_user_path(current_user)
                   .col-xs-4.follower-num
                     .text
                       フォロワー
                     .num
-                      0
+                      = link_to current_user.followers.count, followers_user_path(current_user)
               - @tweet.errors.full_messages.each do |message|
                 .alert.alert-danger= message
               = form_for @tweet do |f|
