@@ -5,9 +5,9 @@ class FollowsController < ApplicationController
     @user = User.find(params[:user_id])
 
     if @user.inverse_follows.create(follower: current_user)
-      redirect_to tweets_url, notice: "フォローしました"
+      redirect_to request.referer, notice: "フォローしました"
     else
-      redirect_to tweets_url, alert: "フォローできません"
+      redirect_to request.referer, alert: "フォローできません"
     end
   end
 
@@ -15,6 +15,6 @@ class FollowsController < ApplicationController
     @user = User.find(params[:user_id])
     follow = @user.inverse_follows.find_by(follower: current_user.id)
     follow.destroy
-    redirect_to tweets_url, notice: "フォローを解除しました"
+    redirect_to request.referer, notice: "フォローを解除しました"
   end
 end
